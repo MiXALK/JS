@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+    <!--The link depends on the selected value from the list-->
+        <select onchange="document.querySelector('#num').href=this.value">
+            <option value="tel:123456" selected="">123456</option>
+            <option value="tel:234567">234567</option>
+            <option value="tel:345678">345678</option>
+        </select>
+        <a id="num" href="">Call</a>
+    </body>
+</html>
