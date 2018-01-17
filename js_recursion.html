@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  </head>
+  <body>
+    <script>
+//      Напишите функцию sumTo(n), которая для данного n вычисляет сумму чисел от 1 до n
+
+      //С использованием цикла.
+      function sumTo(n) {
+        var sum = 0;
+        for (var i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+
+      alert( sumTo(100) );
+
+      //Через рекурсию, т.к. sumTo(n) = n + sumTo(n-1) для n > 1
+      function sumTo(n) {
+        if (n == 1) return 1;
+        return n + sumTo(n - 1);
+      }
+
+      alert( sumTo(100) );
+
+      //С использованием формулы для суммы арифметической прогрессии
+      function sumTo(n) {
+        return n * (n + 1) / 2;
+      }
+
+      alert( sumTo(100) );
+
+
+      //Задача – написать функцию factorial(n), которая возвращает факториал числа n!, используя рекурсивный вызов
+      function factorial(n) {
+        return (n != 1) ? n * factorial(n - 1) : 1;
+      }
+
+      alert( factorial(5) ); // 120
+
+
+      //Напишите функцию fib(n), которая возвращает n-е число Фибоначчи. Пример работы
+      function fib(n) {
+        return n <= 1 ? n : fib(n - 1) + fib(n - 2);
+      }
+
+      alert( fib(3) ); // 2
+      alert( fib(7) ); // 13
+      // fib(77); // не запускаем, подвесит браузер
+
+      //Код для вычисления в цикле
+      function fib(n) {
+        var a = 1,
+            b = 1;
+        for (var i = 3; i <= n; i++) {
+          var c = a + b;
+          a = b;
+          b = c;
+        }
+        return b;
+      }
+
+      alert( fib(3) ); // 2
+      alert( fib(7) ); // 13
+      alert( fib(77) ); // 5527939700884757
+    </script>
+
+  </body>
+</html>
